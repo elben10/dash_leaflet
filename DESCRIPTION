@@ -1,0 +1,15 @@
+Package: dashLeaflet
+Title: A leaflet component for dash
+Version: 0.0.1
+Authors @R: as.person(c(Jakob Jul Elben <elbenjakobjul@gmail.com>))
+Description: A leaflet component for dash
+Depends: R (>= 3.0.2)
+Imports: 
+Suggests: 
+License: MIT + file LICENSE
+URL: 
+BugReports: 
+Encoding: UTF-8
+LazyData: true
+Author: Jakob Jul Elben [aut]
+Maintainer: Jakob Jul Elben <elbenjakobjul@gmail.com>
