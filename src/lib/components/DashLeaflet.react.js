@@ -232,7 +232,11 @@ export default class DashLeaflet extends Component {
                 )
             } else {
                 return (
-                    <ReactLeaflet.LayersControl.Overlay checked name={layer.title} key={"marker_layer" + index_i}>
+                    <ReactLeaflet.LayersControl.Overlay
+                        checked={typeof (layer.checked) === 'undefined' ? true : layer.checked}
+                        name={layer.title}
+                        key={"marker_layer" + index_i}
+                    >
                         <ReactLeaflet.FeatureGroup>
                             {layerList}
                         </ReactLeaflet.FeatureGroup>
