@@ -5,7 +5,7 @@ import dash_html_components as html
 
 app = dash.Dash(__name__)
 
-app.layout = html.Div(dash_leaflet.DashLeaflet(markers=[{"title": "Hello", "geom": [[1, 1], [1, 2]], "cluster": True}]))
+app.layout = html.Div(dash_leaflet.DashLeaflet(markers=[{"title": "Hello", "geom": [[1, 1], [1, 2]], "cluster": True, "checked": False}]))
 
 
 if __name__ == '__main__':

@@ -136,7 +136,7 @@
         "required": false,
         "description": "The style of the main element",
         "defaultValue": {
-          "value": "{height: '600px'}",
+          "value": "{ height: '600px' }",
           "computed": false
         }
       },

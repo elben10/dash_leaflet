@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as ReactLeaflet from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
@@ -118,7 +118,7 @@ export default class DashLeaflet extends Component {
 
             return (
                 <ReactLeaflet.LayersControl.Overlay
-                    checked
+                    checked={typeof (layer.checked) === 'undefined' ? true : layer.checked}
                     name={layer.title}
                     key={'line_layer' + index_i}
                 >
@@ -156,8 +156,8 @@ export default class DashLeaflet extends Component {
             for (let i = 0; i < options.iconSizeMultiplier.length; i++) {
                 let size = options.iconSize
                     ? options.iconSize.map(
-                          x => x * options.iconSizeMultiplier[i]
-                      )
+                        x => x * options.iconSizeMultiplier[i]
+                    )
                     : [25, 25].map(x => x * options.iconSizeMultiplier[i]);
                 icons.push(
                     L.icon({
@@ -218,7 +218,11 @@ export default class DashLeaflet extends Component {
 
             if (layer.cluster) {
                 return (
-                    <ReactLeaflet.LayersControl.Overlay checked name={layer.title} key={"marker_layer" + index_i}>
+                    <ReactLeaflet.LayersControl.Overlay
+                        checked={typeof (layer.checked) === 'undefined' ? true : layer.checked}
+                        name={layer.title}
+                        key={"marker_layer" + index_i}
+                    >
                         <ReactLeaflet.FeatureGroup>
                             <MarkerClusterGroup>
                                 {layerList}
@@ -277,7 +281,7 @@ export default class DashLeaflet extends Component {
 
             return (
                 <ReactLeaflet.LayersControl.Overlay
-                    checked
+                    checked={typeof (layer.checked) === 'undefined' ? true : layer.checked}
                     name={layer.title}
                     key={'circleMarker_layer' + index_i}
                 >
@@ -318,7 +322,7 @@ export default class DashLeaflet extends Component {
             <div id={this.props.id} style={this.props.style}>
                 <ReactLeaflet.Map
                     id="Map"
-                    style={{height: '100%'}}
+                    style={{ height: '100%' }}
                     bounds={mapOptions.bounds}
                     center={mapOptions.center}
                     minBounds={mapOptions.minBounds}
@@ -484,7 +488,7 @@ DashLeaflet.propTypes = {
 };
 
 DashLeaflet.defaultProps = {
-    style: {height: '600px'},
+    style: { height: '600px' },
     mapOptions: {
         center: [0, 0],
         zoom: 4,

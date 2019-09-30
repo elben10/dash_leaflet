@@ -9,7 +9,7 @@ DashLeaflet is allows to display a map in dash. Several point and line layers ca
 
 Keyword arguments:
 - id (string; optional): The id of the main element
-- style (dict; default {height: '600px'}): The style of the main element. style has the following type: dict containing keys 'height'.
+- style (dict; default { height: '600px' }): The style of the main element. style has the following type: dict containing keys 'height'.
 Those keys have the following types:
   - height (string; optional)
 - mapOptions (dict; default {
